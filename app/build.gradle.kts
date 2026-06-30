@@ -1,5 +1,3 @@
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -20,29 +18,11 @@ android {
         vectorDrawables { useSupportLibrary = true }
     }
 
-    signingConfigs {
-        create("release") {
-            val props = Properties()
-            val localFile = rootProject.file("local.properties")
-            if (localFile.exists()) {
-                localFile.inputStream().use { props.load(it) }
-            }
-            storeFile = file(
-                System.getenv("KEYSTORE_FILE") ?: props.getProperty("signing.storeFile", "release.p12")
-            )
-            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: props.getProperty("signing.storePassword", "xiao123")
-            keyAlias = System.getenv("KEY_ALIAS") ?: props.getProperty("signing.keyAlias", "")
-            keyPassword = System.getenv("KEY_PASSWORD") ?: props.getProperty("signing.keyPassword", "xiao123")
-            storeType = "PKCS12"
-        }
-    }
-
     buildTypes {
         debug {
             isMinifyEnabled = false
         }
         release {
-            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
