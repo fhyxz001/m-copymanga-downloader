@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -13,14 +15,14 @@ android {
         applicationId = "com.copymanga.downloader"
         minSdk = 26
         targetSdk = 34
-        versionCode = 12
-        versionName = "0.1.11"
+        versionCode = 13
+        versionName = "0.1.12"
         vectorDrawables { useSupportLibrary = true }
     }
 
     signingConfigs {
         create("release") {
-            val props = java.util.Properties()
+            val props = Properties()
             val localFile = rootProject.file("local.properties")
             if (localFile.exists()) {
                 localFile.inputStream().use { props.load(it) }
