@@ -76,8 +76,19 @@ jobs:
           echo "versionName 更新为 $VERSION,versionCode 更新为 $NEW_CODE"
           grep -E "version(Name|Code)" app/build.gradle.kts
 
+      - name: 解码签名密钥
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > app/release.jks
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+
       - name: 编译 Release APK
         run: ./gradlew assembleRelease --no-daemon --stacktrace
+        env:
+          KEYSTORE_FILE: release.jks
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: 定位产物
         id: apk
