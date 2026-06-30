@@ -110,7 +110,7 @@ class CopyClient(
         coroutineScope {
             val deferred = (2..totalPages).map { page ->
                 async {
-                    val offset = (page - 1) * limit
+                    val offset = (page - 1).toLong() * limit
                     getChapters(pathWord, groupPathWord, limit, offset)
                 }
             }
@@ -164,7 +164,7 @@ class CopyClient(
         val resp = imgClient.downloadImage(upgraded)
         val body = checkHttpStatus(resp, "下载图片")
         val bytes = body.bytes()
-        val contentType = resp.headers["Content-Type"] ?: ""
+        val contentType = resp.headers()["Content-Type"] ?: ""
         val format = when {
             contentType.contains("webp", ignoreCase = true) -> "webp"
             contentType.contains("jpeg", ignoreCase = true) || contentType.contains("jpg", ignoreCase = true) -> "jpeg"

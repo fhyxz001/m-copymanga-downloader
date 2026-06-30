@@ -38,6 +38,7 @@ fun LoginDialog(
     val scope = rememberCoroutineScope()
     val copyRepository = container.copyRepository
     val loginFailedText = stringResource(R.string.login_failed)
+    val usernamePasswordRequired = stringResource(R.string.username_password_required)
 
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -107,7 +108,7 @@ fun LoginDialog(
             Button(
                 onClick = {
                     if (username.isBlank() || password.isBlank()) {
-                        errorMessage = stringResource(R.string.username_password_required)
+                        errorMessage = usernamePasswordRequired
                         return@Button
                     }
                     scope.launch {

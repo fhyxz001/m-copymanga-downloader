@@ -114,7 +114,7 @@ class DownloadTask(
                     }.awaitAll()
                 }
 
-                if (!isActive) return
+                if (!coroutineContext.isActive) return
 
                 if (_downloaded.get() != _total.get()) {
                     fail()
@@ -175,7 +175,7 @@ class DownloadTask(
     }
 
     private suspend fun downloadImg(url: String, index: Long, tempDir: File) {
-        if (!isActive) return
+        if (!coroutineContext.isActive) return
         val ext = config.downloadFormat.extension
         val savePath = File(tempDir, String.format("%03d.%s", index + 1, ext))
         if (savePath.exists()) {
@@ -192,7 +192,7 @@ class DownloadTask(
         try {
             val maxRetries = 5
             var retries = 0
-            while (isActive) {
+            while (coroutineContext.isActive) {
                 try {
                     val (bytes, srcFormat) = copyClientProvider().getImgData(url)
                     val converted = convertToFormat(bytes, srcFormat, config.downloadFormat)
@@ -235,7 +235,7 @@ class DownloadTask(
 
     private suspend fun sleepBetweenChapter() {
         var remaining = config.chapterDownloadIntervalSec
-        while (remaining > 0 && isActive) {
+        while (remaining > 0 && coroutineContext.isActive) {
             eventHub.emit(DownloadEvent.Sleeping(chapterInfo.chapterUuid, remaining))
             delay(1000)
             remaining--

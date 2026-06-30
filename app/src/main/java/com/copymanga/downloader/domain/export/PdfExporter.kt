@@ -11,8 +11,10 @@ import com.tom_roush.pdfbox.pdmodel.PDPageContentStream
 import com.tom_roush.pdfbox.pdmodel.common.PDRectangle
 import com.tom_roush.pdfbox.pdmodel.graphics.image.JPEGFactory
 import com.tom_roush.pdfbox.pdmodel.graphics.image.LosslessFactory
+import com.tom_roush.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitDestination
 import com.tom_roush.pdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline
 import com.tom_roush.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem
+import com.tom_roush.pdfbox.io.MemoryUsageSetting
 import java.io.File
 import java.io.FileInputStream
 
@@ -71,7 +73,7 @@ class PdfExporter(private val metadataStore: MetadataStore) {
         val merged = PDFMergerUtility()
         merged.destinationFileName = targetPdf.absolutePath
         pdfs.forEach { merged.addSource(it) }
-        merged.mergeDocuments(null)
+        merged.mergeDocuments(MemoryUsageSetting.setupMainMemoryOnly())
 
         // 添加书签
         PDDocument.load(targetPdf).use { doc ->
@@ -81,7 +83,9 @@ class PdfExporter(private val metadataStore: MetadataStore) {
                 val item = PDOutlineItem()
                 item.title = title
                 val page = doc.getPage(index)
-                item.destination = page
+                val dest = PDPageFitDestination()
+                dest.setPage(page)
+                item.destination = dest
                 outline.addLast(item)
             }
             doc.save(targetPdf)

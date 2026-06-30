@@ -6,7 +6,6 @@ import com.copymanga.downloader.data.model.Config
 import com.copymanga.downloader.data.model.FavoriteItem
 import com.copymanga.downloader.data.model.GetFavoriteOrdering
 import com.copymanga.downloader.data.remote.CopyClient
-import com.copymanga.downloader.data.remote.dto.toModel
 import com.copymanga.downloader.data.store.ConfigStore
 import com.copymanga.downloader.domain.AccountPool
 import kotlinx.coroutines.async

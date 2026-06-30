@@ -42,7 +42,7 @@ class AppContainer(val appContext: Context) {
     }
 
     private val accountPoolInternal: AccountPool by lazy {
-        AccountPool(copyClientProviderInternal(), accountStore)
+        AccountPool(CopyClient(config.apiDomain()), accountStore)
     }
 
     private fun copyClientProviderInternal(): suspend () -> CopyClient = {
