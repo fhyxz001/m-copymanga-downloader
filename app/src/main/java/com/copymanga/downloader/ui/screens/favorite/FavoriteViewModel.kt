@@ -43,7 +43,7 @@ class FavoriteViewModel(
         load()
     }
 
-    fun setOrdering(value: GetFavoriteOrdering) {
+    fun updateOrdering(value: GetFavoriteOrdering) {
         if (value == ordering) return
         ordering = value
         currentPage = 0

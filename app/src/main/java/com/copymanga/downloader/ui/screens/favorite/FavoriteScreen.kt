@@ -63,7 +63,7 @@ fun FavoriteScreen(
     Column(modifier = Modifier.fillMaxSize()) {
         OrderingSelector(
             selected = viewModel.ordering,
-            onSelect = viewModel::setOrdering,
+            onSelect = viewModel::updateOrdering,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp),
