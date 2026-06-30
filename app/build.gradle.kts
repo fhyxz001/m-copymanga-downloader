@@ -30,9 +30,9 @@ android {
             storeFile = file(
                 System.getenv("KEYSTORE_FILE") ?: props.getProperty("signing.storeFile", "release.p12")
             )
-            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: props.getProperty("signing.storePassword", "")
+            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: props.getProperty("signing.storePassword", "xiao123")
             keyAlias = System.getenv("KEY_ALIAS") ?: props.getProperty("signing.keyAlias", "")
-            keyPassword = System.getenv("KEY_PASSWORD") ?: props.getProperty("signing.keyPassword", "")
+            keyPassword = System.getenv("KEY_PASSWORD") ?: props.getProperty("signing.keyPassword", "xiao123")
             storeType = "PKCS12"
         }
     }
