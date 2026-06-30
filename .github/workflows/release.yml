@@ -36,8 +36,9 @@ jobs:
             VERSION="${{ github.event.inputs.version }}"
           else
             COMMIT_MSG="${{ github.event.head_commit.message }}"
-            # 匹配: 发布v1.0.0 / 发布 v1.0.0 / 发布V1.0.0 / release v1.0.0
-            if [[ "$COMMIT_MSG" =~ (发布|release|Release)[[:space:]]*v?[[:space:]]*([0-9]+\.[0-9]+\.[0-9]+) ]]; then
+            # 匹配: 发布v1.0 / 发布 v1.0.0 / 发布V1.0.0.1 / release v1.2
+            # 版本号支持 2~4 段,如 1.0、1.0.0、1.0.0.1
+            if [[ "$COMMIT_MSG" =~ (发布|release|Release)[[:space:]]*v?[[:space:]]*([0-9]+(\.[0-9]+){1,3}) ]]; then
               VERSION="${BASH_REMATCH[2]}"
             else
               echo "未在提交信息中检测到版本号: $COMMIT_MSG"
