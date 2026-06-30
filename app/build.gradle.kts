@@ -15,8 +15,8 @@ android {
         applicationId = "com.copymanga.downloader"
         minSdk = 26
         targetSdk = 34
-        versionCode = 14
-        versionName = "0.1.13"
+        versionCode = 15
+        versionName = "0.1.14"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -28,11 +28,12 @@ android {
                 localFile.inputStream().use { props.load(it) }
             }
             storeFile = file(
-                System.getenv("KEYSTORE_FILE") ?: props.getProperty("signing.storeFile", "release.jks")
+                System.getenv("KEYSTORE_FILE") ?: props.getProperty("signing.storeFile", "release.p12")
             )
             storePassword = System.getenv("KEYSTORE_PASSWORD") ?: props.getProperty("signing.storePassword", "")
             keyAlias = System.getenv("KEY_ALIAS") ?: props.getProperty("signing.keyAlias", "")
             keyPassword = System.getenv("KEY_PASSWORD") ?: props.getProperty("signing.keyPassword", "")
+            storeType = "PKCS12"
         }
     }
 
