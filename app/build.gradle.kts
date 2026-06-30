@@ -13,15 +13,17 @@ android {
         applicationId = "com.copymanga.downloader"
         minSdk = 26
         targetSdk = 34
-        versionCode = 11
-        versionName = "0.1.10"
+        versionCode = 12
+        versionName = "0.1.11"
         vectorDrawables { useSupportLibrary = true }
     }
 
     signingConfigs {
         create("release") {
-            val props = rootProject.file("local.properties").let { file ->
-                java.util.Properties().apply { if (file.exists()) load(file.inputStream()) }
+            val props = java.util.Properties()
+            val localFile = rootProject.file("local.properties")
+            if (localFile.exists()) {
+                localFile.inputStream().use { props.load(it) }
             }
             storeFile = file(
                 System.getenv("KEYSTORE_FILE") ?: props.getProperty("signing.storeFile", "release.jks")
