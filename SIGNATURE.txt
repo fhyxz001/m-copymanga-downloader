@@ -1,0 +1,36 @@
+============================================================
+  项目签名文件 — m-copymanga-downloader
+============================================================
+
+[基本信息]
+  项目名称    : m-copymanga-downloader
+  项目描述    : 拷贝漫画下载器 Android 版
+  应用包名    : com.copymanga.downloader
+  版本号      : 0.1.0 (versionCode=1)
+  技术栈      : Kotlin 2.0.20 + Jetpack Compose + AGP 8.5.2
+  目标平台    : Android (minSdk 26 / targetSdk 34 / compileSdk 34)
+
+[签名信息]
+  生成日期    : 2026-06-30 21:26:46 +0800
+  签名算法    : SHA-256
+
+[文件校验]
+  README.md
+    SHA256: de3b486afcf71ab017d6198554822fa055302d93eb6ab43116c2513286058d1c
+  settings.gradle.kts
+    SHA256: d161b18bfec355c7766fdfdd014df12646e05a2743c17f016ed07dcb183947b9
+  build.gradle.kts
+    SHA256: 515c93921fb05e6b9b3c0d9601c54c91aa7a7250c77ef062403663ae15f67e72
+  app/build.gradle.kts
+    SHA256: 9b8250ab69f96c13d7435c425419f432417e83f6bece73ff98c527e5fb95a732
+  gradle.properties
+    SHA256: 7ad8ab4e771f9e781f56d7ddadfc50686d6edc54f98f101b87ba2d8945ed8cc1
+  libs.versions.toml
+    SHA256: (文件不存在)
+  proguard-rules.pro
+    SHA256: (文件不存在)
+
+============================================================
+  本文件由 Marvis File Agent 自动生成
+============================================================
+（内容由AI生成，仅供参考）

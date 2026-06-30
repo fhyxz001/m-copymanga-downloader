@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">拷贝漫画下载器</string>
+    <string name="app_title">拷贝漫画下载器</string>
+
+    <!-- Tabs -->
+    <string name="tab_search">漫画搜索</string>
+    <string name="tab_favorite">漫画收藏</string>
+    <string name="tab_downloaded">本地库存</string>
+    <string name="tab_chapter">章节详情</string>
+    <string name="tab_progress">下载进度</string>
+
+    <!-- Common -->
+    <string name="login">登录</string>
+    <string name="logout">已退出登录</string>
+    <string name="settings">配置</string>
+    <string name="logs">日志</string>
+    <string name="about">关于</string>
+    <string name="refresh">刷新</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="loading">加载中…</string>
+    <string name="empty">暂无数据</string>
+    <string name="menu">菜单</string>
+
+    <!-- Search -->
+    <string name="search_hint">关键词</string>
+    <string name="search_hint_label">搜索漫画</string>
+    <string name="search_button">搜索</string>
+    <string name="search_start_hint">输入关键词开始搜索</string>
+    <string name="search_no_results">未找到结果</string>
+    <string name="search_failed">搜索失败</string>
+    <string name="unknown_author">未知作者</string>
+
+    <!-- Favorite -->
+    <string name="favorite_empty">暂无收藏</string>
+    <string name="favorite_load_failed">获取收藏失败</string>
+    <string name="favorite_ordering_added">按加入时间</string>
+    <string name="favorite_ordering_updated">按更新时间</string>
+    <string name="favorite_ordering_read">按阅读时间</string>
+    <string name="favorite_ordering_added_label">最近添加</string>
+    <string name="favorite_ordering_updated_label">最近更新</string>
+    <string name="favorite_ordering_read_label">最近阅读</string>
+    <string name="last_chapter">最近更新：%1$s</string>
+
+    <!-- Downloaded -->
+    <string name="update_downloaded">更新库存</string>
+    <string name="downloaded_empty">暂无本地库存</string>
+    <string name="downloaded_scan_failed">扫描本地库存失败</string>
+    <string name="downloaded_chapter_count">已下载 %1$d 个章节</string>
+    <string name="share">分享</string>
+    <string name="share_metadata">分享漫画元数据</string>
+
+    <!-- Chapter -->
+    <string name="chapter_select_comic_hint">从搜索、收藏或本地库存选择一部漫画</string>
+    <string name="chapter_load_failed">加载漫画详情失败</string>
+    <string name="chapter_downloaded">已下载</string>
+    <string name="chapter_mode_download">下载</string>
+    <string name="chapter_mode_export">导出</string>
+    <string name="download_selected">下载勾选章节</string>
+    <string name="selected_count">已选择 %1$d 项</string>
+    <string name="select_all">全选</string>
+    <string name="select">勾选</string>
+    <string name="deselect">取消</string>
+    <string name="deselect_all">取消全选</string>
+    <string name="invert_selection">反选</string>
+    <string name="download">下载</string>
+    <string name="export_cbz">导出cbz</string>
+    <string name="export_pdf">导出pdf</string>
+    <string name="export_cbz_short">CBZ</string>
+    <string name="export_pdf_short">PDF</string>
+    <string name="export_failed">导出失败</string>
+
+    <!-- Progress -->
+    <string name="progress_empty">暂无下载任务</string>
+    <string name="progress_uncompleted">未完成</string>
+    <string name="progress_completed">已完成</string>
+    <string name="progress_export">导出进度</string>
+    <string name="progress_format">%1$d/%2$d  (%3$d%%)</string>
+    <string name="queued">排队中</string>
+    <string name="downloading">下载中</string>
+    <string name="paused">已暂停</string>
+    <string name="completed">下载完成</string>
+    <string name="failed">下载失败</string>
+    <string name="pause">暂停</string>
+    <string name="resume">继续</string>
+    <string name="delete">删除</string>
+
+    <!-- Settings -->
+    <string name="settings_storage">存储</string>
+    <string name="settings_network">网络</string>
+    <string name="settings_download">下载</string>
+    <string name="settings_dir_template">目录模板</string>
+    <string name="settings_export">导出</string>
+    <string name="settings_other">其他</string>
+    <string name="download_dir">下载目录</string>
+    <string name="export_dir">导出目录</string>
+    <string name="api_domain_mode">API 域名模式</string>
+    <string name="api_domain_default">默认</string>
+    <string name="api_domain_custom">自定义</string>
+    <string name="custom_api_domain">自定义域名</string>
+    <string name="download_format">下载格式</string>
+    <string name="chapter_concurrency">章节并发数</string>
+    <string name="chapter_interval">章节下载间隔（秒）</string>
+    <string name="img_concurrency">图片并发数</string>
+    <string name="img_interval">图片下载间隔（秒）</string>
+    <string name="update_downloaded_interval">更新已下载漫画间隔（秒）</string>
+    <string name="comic_dir_fmt">漫画目录格式</string>
+    <string name="chapter_dir_fmt">章节目录格式</string>
+    <string name="export_dir_fmt">导出目录格式</string>
+    <string name="merge_pdf_fmt">合并 PDF 目录格式</string>
+    <string name="enable_merge_pdf">合并 PDF</string>
+    <string name="create_pdf_concurrency">创建 PDF 并发数</string>
+    <string name="export_skip_mode">导出跳过模式</string>
+    <string name="export_skip_none">不跳过</string>
+    <string name="export_skip_existing">跳过已存在文件</string>
+    <string name="export_skip_exported">跳过已导出章节</string>
+    <string name="enable_file_logger">启用文件日志</string>
+    <string name="open_config_dir">打开配置目录</string>
+    <string name="restart_required">重启应用后生效</string>
+
+    <!-- Logs -->
+    <string name="logs_empty">暂无日志</string>
+    <string name="logs_live">实时日志</string>
+    <string name="logs_file">文件日志</string>
+    <string name="open_log_file">打开日志文件</string>
+    <string name="open_log_dir">打开日志目录</string>
+    <string name="clear_live_logs">清空实时日志</string>
+    <string name="clear_logs">清空</string>
+    <string name="close">关闭</string>
+
+    <!-- Login dialog -->
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="current_user">当前用户：%1$s</string>
+    <string name="login_failed">登录失败</string>
+    <string name="username_password_required">用户名和密码不能为空</string>
+
+    <!-- About -->
+    <string name="about_app_name">拷贝漫画下载器</string>
+    <string name="about_version">版本：%1$s</string>
+    <string name="about_description">本应用为桌面端 Tauri 版本的全功能移植，支持搜索、收藏、下载、CBZ/PDF 导出。</string>
+    <string name="about_original_project">原项目：copymanga-downloader</string>
+</resources>
